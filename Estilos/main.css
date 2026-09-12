@@ -9,4 +9,36 @@ body {
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(to top, #87c9ff, #afd6f7);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items:flex-start;
+    overflow: hidden;
+    gap: 18px;
+}
+
+div#imagemTitulo {
+    height: 100%;
+    height: 500px;
+    width: 100%;
+    background-color: rgb(75, 233, 69);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+h1#titulo {
+    
 }
