@@ -6,6 +6,7 @@
     <title>Gerador de senhas</title>
     <link rel="stylesheet" href="Estilos/main.css">
     <script src="JS/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/8125016427.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
@@ -14,23 +15,62 @@
         </div>
         <div id="conteudoCampo">
             <h2>Crie sua Conta:</h2>
-            <p>Registre-se para utilizar todas as funcionalidades do sistema</p>
+            <hr>
+            <p>Registre-se para utilizar todas as funcionalidades do sistema:</p>
             <form method="post" id="formularioCamp">
                 <label for="inome">Nome:</label>
-                <input type="text" name="nome" id="inome">
+                <input type="text" name="nome" id="inome" class="loginInputs">
 
                 <label for="iemail">Email:</label>
-                <input type="text" name="email" id="iemail" required>
+                <input type="text" name="email" id="iemail" required class="loginInputs">
 
                 <label for="isenha">Senha:</label>
-                <input type="text" name="senha" id="isenha" required>
+                <input type="text" name="senha" id="isenha" required class="loginInputs">
             </form>
                 
-            <p>Quer ajuda para criar uma senha segura? <span id="novaSenhaGerador">Clique aqui</span></p>
+            <p id="geradorParagra">Quer ajuda para criar uma senha segura? <span id="novaSenhaGerador">Clique aqui</span></p>
+
+            <div id="campGeradorSenha">
+                <div id="configSenha">
+                    <div id="numCaracteres">
+                        <label for="isenhaNumb">Quantidade de caracteres</label>
+                        <input type="number" name="senhaNumb" id="isenhaNumb" min="8" max="15">
+                    </div>
+
+                    <section class="opcaoCheckbox">
+                        <label for="iletras">
+                            Letras:
+                        </label>
+                            <input type="checkbox" name="letras" id="iletras">
+                    </section>
+
+                     <section class="opcaoCheckbox">
+                         <label for="inumeros">
+                            Números: </label>
+                            <input type="checkbox" name="numeros" id="inumeros">
+                     </section>
+
+                     <section class="opcaoCheckbox">
+                         <label for="isimbolos">
+                            Símbolos: </label>
+                            <input type="checkbox" name="simbolos" id="isimbolos">
+                     </section>
+
+                    <button id="criarBTN">Criar senha</button>
+                </div>
+            </div>
+
+            <div id="senhaResultCamp">
+                <p>Sua senha foi gerada abaixo:</p>
+
+                <h3 id="senhaFeita">IOPKN125sdsa</h3>
+
+                <button id="copiarBTN">Copiar</button>
+            </div>
             
             <form method="post" id="confirmaSenhaCamp"></form>
-                <label for="iconfirm">Confirmação de senha</label>
-                <input type="text" name="confirm" id="iconfirm">
+                <label for="iconfirm">Confirmação de senha:</label>
+                <input type="text" name="confirm" id="iconfirm" class="loginInputs">
 
                 <input type="submit" value="Cadastrar">
             </form>

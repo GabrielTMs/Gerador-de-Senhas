@@ -12,34 +12,38 @@
 
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: linear-gradient(to top, #87c9ff, #afd6f7);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
     font-family: 'MainFont', Arial, Helvetica, sans-serif;
+    padding: 10px 0px;
 }
 
 main {
     width: 100%;
     max-width: 900px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 6px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items:flex-start;
+    align-items:stretch;
     overflow: hidden;
     gap: 18px;
 }
 
 div#imagemTitulo {
-    height: 100%;
-    height: 500px;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
     width: 100%;
     max-width: 450px;
-    background: rgba(163, 84, 209, 0.418) url(../Imgs/ImagemTitulo.jpg) left center/ 26% auto repeat-x fixed;
+    background: rgba(163, 84, 209, 0.418) url(../Imgs/122494.jpg) right center/ 37% auto repeat-x fixed;
     box-sizing: border-box;
 }
 
@@ -73,11 +77,28 @@ div#conteudoCampo {
 h2 {
     align-self: center;
     font-size: 2em;
+    margin-bottom: 4px;
+}
+
+hr {
+    align-self: center;
+    width: 100%;
+    max-width: 339px;
+
 }
 
 p {
-    font-size: 1.1em;
-    line-height: 25px;
+    font-size: 1.2em;
+    line-height: 27px;
+}
+
+p#geradorParagra {
+    text-align: center;
+}
+
+span#novaSenhaGerador {
+    font-weight: 500;
+    cursor: pointer;
 }
 
 form#formularioCamp {
@@ -87,18 +108,22 @@ form#formularioCamp {
     align-items: flex-start;
     align-content: flex-start;
     width: 100%;
-    gap: 10px;
+    gap: 5px;
 }
 
 label {
-    font-size: 1em;
+    margin-top: 10px;
+    font-size: 1.1em;
     font-weight: 500;
+    cursor: pointer;
 }
 
-input {
+input.loginInputs {
     width: 100%;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.527);
+    font-size: 1.1em;
+    padding: 2px;
 }
 
 input[type=submit] {
@@ -113,4 +138,130 @@ input[type=submit] {
     font-size: 1.1em;
     margin-top: 10px;
     margin-right: 20px;
+    cursor: pointer;
 }
+
+div#campGeradorSenha {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+input[type=number] {
+    transform: translateY(20%);
+    padding: 3px;
+    border: 1px solid #00000049;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+div#configSenha {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    gap: 15px;
+    width: 100%;
+}
+
+div#numCaracteres {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type=checkbox] {
+    transform: scale(1.2) translateY(34%);
+    cursor: pointer;
+}
+
+section.opcaoCheckbox {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+}
+
+div#configSenha label {
+    font-size: 1.08em;
+    font-weight: 390;
+}
+
+input#isenhaNumb {
+    max-width: 17px;
+}
+
+div#senhaResultCamp {
+    align-self: center;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid #457a9e;
+    border-radius: 8px;
+    padding: 10px 0px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button#criarBTN {
+    margin-top: 10px;
+    font-size: 1.15em;
+    padding: 8px;
+    border-radius: 15px;
+    border: none;
+    background-color: #87c9ff;
+    color: #0d1318;
+}
+
+div#senhaResultCamp p {
+    font-size: 1em;
+    margin-bottom: 13px;
+}
+
+div#senhaResultCamp h3 {
+    font-size: 1.8em;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(25, 70, 25, 0.562);
+    color: rgb(53, 150, 53);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.61);
+}
+
+div#senhaResultCamp h3::before {
+    content: '\27A1\00A0';
+}
+
+div#senhaResultCamp h3::after {
+    content: '\00A0\2B05';
+}
+
+div#senhaResultCamp button#copiarBTN {
+    margin-top: 20px;
+    font-size: 1.15em;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #87c9ff;
+    color: #0d1318;
+}
+
+
+
+
+
