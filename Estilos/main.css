@@ -308,6 +308,10 @@ div#senhaResultCamp button#copiarBTN:active {
     transition: .1s;
 }
 
+.esconder {
+    display: none;
+}
+
 
 
 
