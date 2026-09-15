@@ -15,11 +15,29 @@ const geradorNumber = () => {
 
 const geradorSymbols = () => {
     const symbols = "*&¨%$#@!-=+_";
-    return symbols[Match.floor(Math.random() * symbols.lenght)];
+    return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-console.log(geradorSymbols());
+const gerador = (geradorLowerCase, geradorUpperCase, geradorNumber, geradorSymbols) => {
+    let senha = "";
+
+    const senhaTamanho = 10;
+
+    const geradoresTudo = [geradorLowerCase, geradorUpperCase, geradorNumber, geradorSymbols]
+
+    for(i = 0; i < senhaTamanho; i = i + geradoresTudo.length) {
+        geradoresTudo.forEach(() => {
+            const geradorRandomFuncoes = [Math.floor(Math.random() * geradoresTudo.length)]();
+
+            senha += geradorRandomFuncoes;
+
+            console.log(geradorRandomFuncoes);
+        });
+    }
+}
 
 btnGeradorSeNHA.addEventListener("click", () => {
-    console.log("Teste");
-})
+    gerador(geradorLowerCase, geradorUpperCase, geradorNumber, geradorSymbols);
+
+
+});
