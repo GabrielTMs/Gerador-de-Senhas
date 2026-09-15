@@ -27,7 +27,7 @@ const gerador = (geradorLowerCase, geradorUpperCase, geradorNumber, geradorSymbo
 
     for(i = 0; i < senhaTamanho; i = i + geradoresTudo.length) {
         geradoresTudo.forEach(() => {
-            const geradorRandomFuncoes = [Math.floor(Math.random() * geradoresTudo.length)]();
+            const geradorRandomFuncoes = geradoresTudo[Math.floor(Math.random() * geradoresTudo.length)]();
 
             senha += geradorRandomFuncoes;
 
