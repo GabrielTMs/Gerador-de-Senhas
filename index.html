@@ -30,11 +30,12 @@
                 
             <p id="geradorParagra">Quer ajuda para criar uma senha segura? <span id="novaSenhaGerador">Clique aqui</span></p>
 
-            <div id="campGeradorSenha">
+            <div id="campGeradorSenha" class="esconder">
                 <div id="configSenha">
+                    <p>Seleciona abaixo, as configurações que deseja que sua senha tenha.</p>
                     <div id="numCaracteres">
                         <label for="isenhaNumb">Quantidade de caracteres</label>
-                        <input type="number" name="senhaNumb" id="isenhaNumb" min="8" max="15">
+                        <input type="number" name="senhaNumb" id="isenhaNumb" min="8" max="15" placeholder="8">
                     </div>
 
                     <section class="opcaoCheckbox">
@@ -60,20 +61,19 @@
                 </div>
             </div>
 
-            <div id="senhaResultCamp">
+            <div id="senhaResultCamp" class="esconder">
                 <p>Sua senha foi gerada abaixo:</p>
 
-                <h3 id="senhaFeita">IOPKN125sdsa</h3>
+                <h3 id="senhaFeita"></h3>
 
                 <button id="copiarBTN">Copiar</button>
             </div>
-            
-            <form method="post" id="confirmaSenhaCamp"></form>
-                <label for="iconfirm">Confirmação de senha:</label>
-                <input type="text" name="confirm" id="iconfirm" class="loginInputs">
+                
+            <label for="iconfirm">Confirmação de senha:</label>
+            <input type="text" name="confirm" id="iconfirm" class="loginInputs">
 
-                <input type="submit" value="Cadastrar">
-            </form>
+            <input type="submit" value="Cadastrar">
+        
         </div>
     </main>
     

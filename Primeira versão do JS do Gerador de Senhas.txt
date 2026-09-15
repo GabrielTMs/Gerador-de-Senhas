@@ -1,9 +1,13 @@
+Primeira versão do JS do Gerador de senhas
+
 const btnGeradorSeNHA = document.querySelector("#novaSenhaGerador");
 const campSenhaGerada = document.querySelector("#senhaResultCamp");
 
 const divCongigSenha = document.querySelector("#campGeradorSenha")
 
-const caracteresInput = document.querySelector("#isenhaNumb");
+const divSenhaGerada = document.querySelector("#senhaResultCamp")
+
+const caracteresOption = document.querySelector("#numCaracteres");
 
 const letrasCheckbox = document.querySelector("#iletras");const numerosCheckbox = document.querySelector("#inumeros");
 const simbolosCheckbox = document.querySelector("#isimbolos");
@@ -30,34 +34,13 @@ const geradorSymbols = () => {
 const gerador = (geradorLowerCase, geradorUpperCase, geradorNumber, geradorSymbols) => {
     let senha = "";
 
-    const senhaTamanho = caracteresInput.value;
+    const senhaTamanho = 10;
 
-    const geradoresTudo = []
-
-    //.checked é para inputs com checkbox que estão ou foram selecionados
-
-    if(letrasCheckbox.checked) {
-        geradoresTudo.push(geradorLowerCase, geradorUpperCase)
-    }
-
-    if(numerosCheckbox.checked) {
-        geradoresTudo.push(geradorNumber)
-    }
-
-    if(simbolosCheckbox.checked) {
-        geradoresTudo.push(geradorSymbols)
-    }
-
-    console.log(geradoresTudo.length)
-
-    if(geradoresTudo.length === 0 || senhaTamanho < 8) {
-        return
-    }
-    
+    const geradoresTudo = [geradorLowerCase, geradorUpperCase, geradorNumber, geradorSymbols]
 
     for(i = 0; i < senhaTamanho; i = i + geradoresTudo.length) {
         geradoresTudo.forEach(() => {
-            const geradorRandomFuncoes = geradoresTudo[Math.floor(Math.random() * geradoresTudo.length)]();
+            const geradorRandomFuncoes = geradoresTudo[Math.floor(Math.random() * 		geradoresTudo.length)]();
 
             senha += geradorRandomFuncoes;
         });
@@ -79,31 +62,7 @@ const esconderConfig = () => {
 }
 
 btnGeradorSeNHA.addEventListener("click", () => {
-
-    esconderConfig();
-
-    campSenhaGerada.classList.add("esconder");
-});
-
-btnCriarSenha.addEventListener("click", () => {
     gerador(geradorLowerCase, geradorUpperCase, geradorNumber, geradorSymbols);
 
-    campSenhaGerada.classList.remove("esconder");
-
-    });
-
-
-btnCopiarSenha.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const senhaCopia = campSenhaGerada.querySelector("#senhaFeita").innerText
-
-    navigator.clipboard.writeText(senhaCopia).then(() => {
-        btnCopiarSenha.innerText = "Senha copiada com sucesso";
-
-        setTimeout(() => {
-            btnCopiarSenha.innerText = "Copiar"
-        }, 1000);
-
-    })
+    esconderConfig();
 });
